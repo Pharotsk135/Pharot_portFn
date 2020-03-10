@@ -1,35 +1,16 @@
- body{
+body{
     background-color: lightgray;
     font-family: Arial, Helvetica, sans-serif;
     
 }
 h1{
-    text-align: left;
+    text-align: center;
     font-size: 42px;
     font-style: italic;
     font-family: fantasy;
     padding-left: 10%;
     padding-right: 10%;
-    margin-left: 150px;
-    margin-right: 150px;
-    background-color: lightskyblue;
-}
-#Ingredient{
-    height: 400px;
-    width: 600px;
-    border: 15px double limegreen;
-}
-.instruction{
-    height: 400px;
-    width: 600px;
-}
-.display{
-    width: 300px;
-    height: 300px;
-}
-.scale{
-    width: 300px;
-    height: 300px;
+    
 }
 ul{
     font-size: 20px;
@@ -38,26 +19,118 @@ ul{
 }
 ol{
     font-size: 20px;
+	text-align: left;
+}	
+li{
+	font-size: 20px;
     text-align: left;
-    margin-right: 50%;
-    display: flex;
-    flex-wrap: wrap;  
-}
-a{
-    font-size: 26px;
+
 }
 h2{
     text-decoration: underline;
     font-size: 36px;
 }
-
-.displayflex{
-    display: flex;
-    flex-wrap: wrap;
+.scale{
+	width: 22%;
+	
 }
-.displayflex>img{
-    width: 25%;
-    margin: 0px 0px;
+#Ingredient{
+    width: 70%;
+	border: 15px double limegreen;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	left: 50px;
+	
+}
+img{
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	left: 50px;
+
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: 10% 30% auto;
+	grid-gap: 10px;
 }
 
+.grid-container > div{
+	border: 1px solid black;
+	font-size: 30px;
+	text-align: center;
+	background-color: white;
+}
 
+#header{
+	grid-column: 1 / span 3 ;
+}
+
+#main1{
+	grid-column: 1 /span 1;
+}
+#main2{
+	grid-column: 2 /span 1;
+}
+
+#right{
+	grid-column: 3/ span 1;
+	
+
+}
+
+#footer{
+	grid-column: 1 / span 3;
+}
+
+@media only screen and (max-width: 768px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: 20% auto;
+		grid-gap: 10px;	  
+	}
+
+	#header{
+		grid-column: 1 / span 2;
+		
+	}
+	#main1{
+		grid-column: 1 /span 1;
+	}
+	#main2{
+		grid-column: 2 /span 1;
+	}
+	#right{
+		grid-column: 2 /span 1;
+	}
+	#footer{
+		grid-column: 1 /span 2;
+	
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.grid-container {
+		  display: grid;
+		  grid-template-columns: auto;
+		  grid-gap: 10px;
+	}
+	#header{
+		grid-column: 1 /span 1;
+		
+	}
+	#main1{
+		grid-column: 1 /span 1;
+	}
+	#main2{
+		grid-column: 1 / span 1;
+	}
+	#right{
+		grid-column: 1 /span 1;
+	}
+	#footer{
+		grid-column: 1 /span 1;
+	}
+}
